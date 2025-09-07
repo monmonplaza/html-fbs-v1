@@ -1,0 +1,227 @@
+@use '../abstract/' as *;
+@use 'sass:color';
+      // background: color.adjust($dark,$lightness: 50%);
+
+.hbanner  {
+  height: calc(100vh - 6rem);
+   position: relative;
+   margin-bottom: 8rem;
+  .hslider__item {
+   
+    isolation: isolate;
+    height: 100%;
+    img {
+      position: absolute;
+      @include imageCover(100%, calc(100vh - 6rem));
+      z-index: -1;
+    }
+    .body {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      max-width: 80rem;
+      width: 100%;
+      transform: translate(-50%, -50%);
+      z-index: 20;
+      color: $light; 
+      text-align: center;
+      small {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        font-style: italic;
+      }
+
+      h2 {
+        font-size: clamp(4rem, 6vw, 5rem);
+        margin-bottom: 2.5rem;
+      }
+
+      p {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+
+
+
+.hprocess {
+  margin-bottom: 8rem;
+  img {
+    margin-top: 6rem;
+    display: block;
+    @include imageCover(100%, 50rem)
+  }
+
+  &__wrapper {
+    @include grid(4, 4rem)
+  }
+
+   &__item:nth-child(odd) {
+    transform: translateY(-9rem);
+   }
+
+  &__item {
+    text-align: center;
+    h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.hservices {
+  margin-bottom: 8rem;
+  &__wrapper {
+    @include grid(2, 8rem);
+    margin-top:8rem
+  }
+    &__item {
+    div {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+}
+
+
+.hpartner {
+  min-height: 70rem;
+  position: relative;
+  margin-bottom: 18rem;
+  img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  &__content {
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    max-width: 70rem;
+    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: $card-shadow;
+    width: 100%;
+    left: calc((100% - $container-width) / 2);
+    padding: 2rem;
+    background: rgba($light, 0.8);
+    border-radius: 1rem;
+    small {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    p{
+      margin-bottom: 4rem;
+    }
+
+    a {
+      align-self: flex-start;
+    }
+  }
+}
+
+.htestimonial {
+
+  background: $dark;
+  position: relative;
+  min-height: 53rem;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    height: 50rem;
+    
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex: 30rem 0 0 ;
+    color: $light;
+    h2 {
+      margin-bottom: 3rem;
+    }
+  }
+
+  .pill__bg__parent {
+    position: absolute;
+    top: 0rem;
+    height: 50rem;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .pill__bg {
+    position: absolute;
+    top: -10rem;
+    background: $accent;
+    height: 34rem;
+    width: 170rem;
+    border-radius: 20rem;
+    transform: rotate(-15deg);
+  }
+
+  &__partner {
+    position: absolute;
+    bottom: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &__company {
+    position: absolute;
+    left: 40%;
+    bottom: 1.5rem;
+    z-index: 20;
+    transform: rotate(-15deg);
+  }
+
+  .pill__sm {
+    position: absolute;
+    background: $accent;
+    height: 10rem;
+    width: 170rem;
+    border-radius: 20rem;
+    transform: rotate(-15deg);
+    bottom: 14rem;
+    z-index: 10;
+  }
+
+  &__nav {
+    position: absolute;
+    bottom: 4rem;
+    right: calc((100% - $container-width) / 2);
+    display: flex;
+    gap: .5rem;
+    span {
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      background: $light;
+      border-radius: 50%;
+    }
+  }
+
+  &__comment {
+    max-width: 50rem;
+    text-align: right;
+    color: $light;
+    position: absolute;
+    top: 5rem ;
+    right: calc((100% - $container-width) / 2);
+        z-index: 20;
+  }
+}

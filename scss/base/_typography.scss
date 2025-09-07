@@ -1,0 +1,78 @@
+@use '../abstract/' as *;
+@font-face {
+  font-family: "poppins-regular";
+  src: url(../fonts/Poppins-Regular.woff2), url(../fonts/Poppins-Regular.woff);
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "poppins-semibold";
+  src: url(../fonts/Poppins-Semibold.woff2), url(../fonts/Poppins-Semibold.woff);
+  font-display: swap;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "poppins-bold";
+  src: url(../fonts/Poppins-Bold.woff2), url(../fonts/Poppins-Bold.woff);
+  font-display: swap;
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'poppins-semibold', sans-serif;
+}
+
+h1 {
+  font-size: clamp(3rem, calc(3rem + 1vw), 5rem);
+  line-height: 1.1;
+
+}
+
+h2 {
+  font-size: clamp(2.5rem, calc(2.5rem + 1vw), 4rem);
+  line-height: 1.3;
+
+}
+
+h3 {
+  font-size: clamp(2rem, calc(2rem + 1vw), 3rem);
+  line-height: 1.5;
+
+}
+
+h4 {
+  font-size: clamp(1.4rem, calc(1.6rem + 1vw), 1.8rem);
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: clamp(1.2rem, calc(1.2rem + 1vw), 1.6rem);
+  line-height: 1.5;
+}
+
+h6 {
+  font-size: clamp(1rem, calc(1rem + 1vw), 1.4rem);
+  line-height: 1.5;
+
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-size: clamp(1.2rem, calc(1.2rem + 1vw), 1.6rem);
+  margin-bottom: 1.5rem;
+}
+
+input, textarea {
+  font-family: inherit;
+}

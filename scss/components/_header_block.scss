@@ -1,0 +1,13 @@
+.header-block {
+    small {
+        font-size: clamp(1.2rem, 6vw, 1.4rem);
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    h2 {
+        line-height: .8;
+        margin-bottom: 2rem;
+    }
+}
