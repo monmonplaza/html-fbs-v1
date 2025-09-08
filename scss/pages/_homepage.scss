@@ -6,8 +6,11 @@
   height: calc(100vh - 6rem);
    position: relative;
    margin-bottom: 8rem;
+   @include mediaQuery($mobile){
+    margin-bottom: 4rem;
+   }
   .hslider__item {
-   
+  
     isolation: isolate;
     height: 100%;
     img {
@@ -16,6 +19,7 @@
       z-index: -1;
     }
     .body {
+       padding: 0 1.5rem;
       position: absolute;
       top: 40%;
       left: 50%;
@@ -46,18 +50,35 @@
 
 .hprocess {
   margin-bottom: 8rem;
+  @include mediaQuery($mobile){
+    margin-bottom: 4rem;
+   }
   img {
     margin-top: 6rem;
     display: block;
-    @include imageCover(100%, 50rem)
+    @include imageCover(100%, 50rem);
+     @include mediaQuery($tablet) {
+      display: none;
+     }
   }
 
   &__wrapper {
-    @include grid(4, 4rem)
+    @include grid(4, 4rem);
+    @include mediaQuery($tablet) {
+    @include grid(2, 4rem);
+      margin-top: 4rem;
+    }
+
+    @include mediaQuery($mobile) {
+      @include grid (1, 2rem);
+    }
   }
 
    &__item:nth-child(odd) {
     transform: translateY(-9rem);
+      @include mediaQuery($tablet) {
+        transform: translateY(0rem);
+      }
    }
 
   &__item {
@@ -73,7 +94,10 @@
   margin-bottom: 8rem;
   &__wrapper {
     @include grid(2, 8rem);
-    margin-top:8rem
+    margin-top:8rem;
+     @include mediaQuery($mobile) {
+      @include grid(1, 4rem);
+     }
   }
     &__item {
     div {
@@ -81,6 +105,10 @@
       align-items: center;
       gap: 2rem;
       margin-bottom: 2rem;
+       @include mediaQuery($mobile) {
+        flex-direction: column;
+        align-items: flex-start;
+       }
     }
 
     a {
@@ -95,10 +123,18 @@
   min-height: 70rem;
   position: relative;
   margin-bottom: 18rem;
+  @include mediaQuery($mobile) {
+    min-height: 30rem;
+      margin-bottom: 4rem;
+  }
   img {
     position: absolute;
     top: 0;
     right: 0;
+    @include mediaQuery($tablet) {
+      width: 100%;
+      position: static;
+    }
   }
 
   &__content {
@@ -116,6 +152,11 @@
     padding: 2rem;
     background: rgba($light, 0.8);
     border-radius: 1rem;
+    @include mediaQuery($tablet) {
+      position: static;
+      transform: translateY(0);
+      margin: 0 auto;
+    }
     small {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -136,23 +177,42 @@
 }
 
 .htestimonial {
-
+  overflow-x: clip;
   background: $dark;
   position: relative;
   min-height: 53rem;
+   @include mediaQuery($tablet) {
+     padding: 8rem 0;
+    }
+
+     @include mediaQuery($mobile) {
+      padding: 4rem 0;
+     }
+  
   &__wrapper {
     display: flex;
     align-items: center;
     height: 50rem;
-    
+    @include mediaQuery($tablet) {
+      flex-direction: column;
+      height: auto;
+    }
   }
   &__content {
     display: flex;
     flex-direction: column;
     flex: 30rem 0 0 ;
     color: $light;
+     @include mediaQuery($tablet) {
+      flex: 0;
+      margin-bottom: 4rem;
+      width: 100%;
+     }
     h2 {
       margin-bottom: 3rem;
+        @include mediaQuery($tablet) {
+          margin-bottom: 1rem;
+        }
     }
   }
 
@@ -160,8 +220,11 @@
     position: absolute;
     top: 0rem;
     height: 50rem;
-    width: 100%;
+    width: 135.5rem;
     overflow: hidden;
+     @include mediaQuery($tablet) {
+      display: none;
+     }
   }
 
   .pill__bg {
@@ -179,6 +242,9 @@
     bottom: 4rem;
     left: 50%;
     transform: translateX(-50%);
+     @include mediaQuery($tablet) {
+      display: none;
+     }
   }
 
   &__company {
@@ -187,17 +253,26 @@
     bottom: 1.5rem;
     z-index: 20;
     transform: rotate(-15deg);
+     @include mediaQuery($tablet) {
+      display: none;
+     }
   }
-
-  .pill__sm {
+  .pill__sm__parent {
     position: absolute;
+    top: 30rem;
+    height: 50rem;
+    z-index: 10;
+    @include mediaQuery($tablet) {
+      display: none;
+    }
+  
+  }
+  .pill__sm {
     background: $accent;
     height: 10rem;
-    width: 170rem;
+    width: 155rem;
     border-radius: 20rem;
     transform: rotate(-15deg);
-    bottom: 14rem;
-    z-index: 10;
   }
 
   &__nav {
@@ -222,6 +297,96 @@
     position: absolute;
     top: 5rem ;
     right: calc((100% - $container-width) / 2);
-        z-index: 20;
+    z-index: 20;
+     @include mediaQuery($tablet) {
+      position: static;
+       max-width: 90rem;
+       text-align: left;
+     }
+  }
+}
+
+.hpartners {
+  padding: 12rem 0;
+  @include mediaQuery($mobile) {
+      padding: 4rem 0;
+     }
+  &__wrapper {
+    @include grid (2, 5rem);
+    max-width:90rem;
+    width: 100%;
+    margin: 0 auto;
+     @include mediaQuery($tablet) {
+      @include grid (1, 5rem);
+     }
+  }
+
+  &__list {
+    @include grid (2, 5rem);
+    justify-self: flex-start; 
+    max-width: 50rem;
+    width: 100%; 
+    @include mediaQuery($tablet) {
+      @include grid (1, 2rem);
+      text-align: center;
+    }
+
+    img {
+      @include mediaQuery($tablet) {
+        justify-self: center;
+      }
+    }
+  }
+
+  &__content {
+    align-self: center;
+    max-width: 50rem;
+  }
+}
+
+.hblog {
+  background: $gray;
+  padding: 8rem 0;
+  @include mediaQuery($mobile) {
+      padding: 4rem 0;
+     }
+  &__wrapper  {
+    @include grid(3, 3rem);
+    margin-top: 8rem;
+    @include mediaQuery($tablet) {
+      @include grid (1, 2rem);
+        margin-top: 4rem;
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    img {
+      @include imageCover(100%, 450px);
+    }
+    h4 {
+      position: absolute;
+      bottom: 9rem;
+      max-width: 36rem;
+      left: 2rem;
+    }
+
+    span {
+      position: absolute;
+      z-index: 20;
+      display: block;
+      // background: color.adjust($gray,$lightness: 10%)  }
+      background-color: color.adjust($gray,$lightness: 100%);
+      color: $dark;
+      bottom: 4rem;
+      left: 0rem;
+      padding: .5rem 2rem .5rem 2rem;
+      font-size: 1.4rem;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+
+    }
   }
 }

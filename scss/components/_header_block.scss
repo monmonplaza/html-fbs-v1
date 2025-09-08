@@ -1,13 +1,22 @@
+@use '../abstract/' as *;
 .header-block {
     small {
-        font-size: clamp(1.2rem, 6vw, 1.4rem);
+        font-size: clamp(1.1rem, 6vw, 1.4rem);
         line-height: 1;
         text-transform: uppercase;
         letter-spacing: 2px;
+          @include mediaQuery($tablet) {
+            line-height: 1.2;
+            letter-spacing: 1px;
+            display: block;
+          }
     }
 
     h2 {
         line-height: .8;
         margin-bottom: 2rem;
+        @include mediaQuery($tablet) {
+            line-height: 1.2;
+        }
     }
 }

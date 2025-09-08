@@ -9,6 +9,9 @@
    &__nav ul {
     display: flex;
     gap: 5rem;
+    @include mediaQuery($tablet) {
+      gap:2rem;
+    }
     a {
        display: flex;
     gap: .5rem; 
