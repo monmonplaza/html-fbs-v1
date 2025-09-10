@@ -32,19 +32,33 @@
   }
 
   &__content {
-    img {
-      @include imageCover(100%, 450px);
-      padding-bottom: 4rem;
+    &__img--large {
+      img {
+        @include imageCover(100%, 450px);
+        padding-bottom: 4rem;
+      }
     }
-    p {
-      padding-bottom: 1rem;
+
+    &__details {
+      p {
+        padding-bottom: 1rem;
+      }
+      ul {
+        padding: 0 0 1rem 5rem;
+        list-style: disc;
+      }
+      span {
+        font-weight: 700;
+      }
     }
-    ul {
-      padding: 0 0 1rem 5rem;
-      list-style: disc;
-    }
-    span {
-      font-weight: 700;
+
+    &__img--medium {
+      img {
+        display: block;
+        margin: 0 auto;
+        @include imageCover(50%, 450px);
+        border-radius: 1.5rem;
+      }
     }
   }
 }

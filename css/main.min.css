@@ -1162,22 +1162,31 @@ input, textarea {
     gap: 2rem;
   }
 }
-.esingle__content img {
+.esingle__content__img--large img {
   height: 450px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   padding-bottom: 4rem;
 }
-.esingle__content p {
+.esingle__content__details p {
   padding-bottom: 1rem;
 }
-.esingle__content ul {
+.esingle__content__details ul {
   padding: 0 0 1rem 5rem;
   list-style: disc;
 }
-.esingle__content span {
+.esingle__content__details span {
   font-weight: 700;
+}
+.esingle__content__img--medium img {
+  display: block;
+  margin: 0 auto;
+  height: 450px;
+  width: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.5rem;
 }
 
 .container {
