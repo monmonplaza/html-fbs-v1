@@ -1094,6 +1094,20 @@ input, textarea {
 .elist {
   padding-bottom: 8rem;
 }
+.elist__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  margin-top: 8rem;
+}
+@media screen and (max-width: 80rem) {
+  .elist__wrapper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    margin-top: 4rem;
+  }
+}
 
 .container {
   max-width: 144rem;

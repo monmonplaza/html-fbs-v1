@@ -81,4 +81,12 @@
 
 .elist {
   padding-bottom: 8rem;
+  &__wrapper {
+    @include grid(3, 3rem);
+    margin-top: 8rem;
+    @include mediaQuery($tablet) {
+      @include grid(1, 2rem);
+      margin-top: 4rem;
+    }
+  }
 }
