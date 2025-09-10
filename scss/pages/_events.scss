@@ -26,7 +26,7 @@
   }
 
   &__wrapper {
-    padding: 8rem 0;
+    padding-top: 8rem;
     display: grid;
     gap: 5rem;
     grid-template-columns: 2fr 1fr;
@@ -77,4 +77,10 @@
       @include imageCover(100%, 250px);
     }
   }
+}
+
+.elist {
+  padding-bottom: 8rem;
+
+  
 }
