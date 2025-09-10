@@ -19,6 +19,7 @@
     h2 {
       line-height: 0.8;
       margin-bottom: 1rem;
+      color: $accent;
       @include mediaQuery($tablet) {
         line-height: 1.2;
       }
@@ -62,6 +63,13 @@
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
     }
+    &:hover {
+      span {
+        background-color: $accent;
+        color: $light;
+        transition: all 0.5s ease;
+      }
+    }
   }
 
   &__medium__image {
@@ -79,6 +87,15 @@
 
 .elist {
   padding-bottom: 8rem;
+
+  h2 {
+    line-height: 0.8;
+    margin-bottom: 1rem;
+    color: $accent;
+    @include mediaQuery($tablet) {
+      line-height: 1.2;
+    }
+  }
 
   &__wrapper {
     @include grid(3, 3rem);

@@ -1017,6 +1017,7 @@ input, textarea {
 .events__block__header h2 {
   line-height: 0.8;
   margin-bottom: 1rem;
+  color: #ac1e72;
 }
 @media screen and (max-width: 80rem) {
   .events__block__header h2 {
@@ -1074,6 +1075,11 @@ input, textarea {
   border-top-right-radius: 2rem;
   border-bottom-right-radius: 2rem;
 }
+.events__card:hover span {
+  background-color: #ac1e72;
+  color: #fff;
+  transition: all 0.5s ease;
+}
 .events__medium__image {
   display: flex;
   flex-direction: column;
@@ -1093,6 +1099,16 @@ input, textarea {
 
 .elist {
   padding-bottom: 8rem;
+}
+.elist h2 {
+  line-height: 0.8;
+  margin-bottom: 1rem;
+  color: #ac1e72;
+}
+@media screen and (max-width: 80rem) {
+  .elist h2 {
+    line-height: 1.2;
+  }
 }
 .elist__wrapper {
   display: grid;
@@ -1160,7 +1176,7 @@ input, textarea {
   padding: 0 0 1rem 5rem;
   list-style: disc;
 }
-.esingle__content ul li span {
+.esingle__content span {
   font-weight: 700;
 }
 
