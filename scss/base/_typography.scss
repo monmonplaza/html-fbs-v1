@@ -1,21 +1,21 @@
 @use '../abstract/' as *;
 @font-face {
   font-family: "poppins-regular";
-  src: url(../fonts/Poppins-Regular.woff2), url(../fonts/Poppins-Regular.woff);
+  src:  url(../fonts/Poppins-Regular.woff);
   font-display: swap;
   font-weight: 400;
 }
 
 @font-face {
   font-family: "poppins-semibold";
-  src: url(../fonts/Poppins-Semibold.woff2), url(../fonts/Poppins-Semibold.woff);
+  src:  url(../fonts/Poppins-Semibold.woff);
   font-display: swap;
   font-weight: 600;
 }
 
 @font-face {
   font-family: "poppins-bold";
-  src: url(../fonts/Poppins-Bold.woff2), url(../fonts/Poppins-Bold.woff);
+  src:  url(../fonts/Poppins-Bold.woff);
   font-display: swap;
   font-weight: 700;
 }
