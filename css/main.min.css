@@ -1080,17 +1080,17 @@ input, textarea {
   color: #fff;
   transition: all 0.5s ease;
 }
-.events__medium__image {
+.events__img--medium {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
 @media screen and (max-width: 45rem) {
-  .events__medium__image {
+  .events__img--medium {
     gap: 2rem;
   }
 }
-.events__medium__image img {
+.events__img--medium img {
   height: 250px;
   width: 100%;
   -o-object-fit: cover;
