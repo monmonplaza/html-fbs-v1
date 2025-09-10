@@ -9,9 +9,9 @@
       }
     &__wrapper {
         @include grid(2, 5rem);
-          @include mediaQuery($mobile) {
-             @include grid(1, 2rem);
-          }
+        @include mediaQuery($mobile) {
+            @include grid(1, 2rem);
+        }
     }
     &__detail:nth-child(2) {
         @include grid(2, 5rem);
