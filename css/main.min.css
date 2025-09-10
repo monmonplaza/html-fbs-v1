@@ -1131,6 +1131,11 @@ input, textarea {
 .esingle__title {
   max-width: 90rem;
 }
+@media screen and (max-width: 80rem) {
+  .esingle__title {
+    max-width: 70rem;
+  }
+}
 @media screen and (max-width: 45rem) {
   .esingle__title {
     max-width: -moz-fit-content;
