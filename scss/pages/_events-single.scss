@@ -30,6 +30,7 @@
       @include grid(1, 2rem);
     }
   }
+
   &__content {
     img {
       @include imageCover(100%, 450px);
