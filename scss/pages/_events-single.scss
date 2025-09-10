@@ -44,7 +44,7 @@
         padding-bottom: 1rem;
       }
       ul {
-        padding: 0 0 1rem 5rem;
+        padding: 0 0 3rem 5rem;
         list-style: disc;
       }
       span {
@@ -58,6 +58,32 @@
         margin: 0 auto;
         @include imageCover(50%, 450px);
         border-radius: 1.5rem;
+        @include mediaQuery($tablet) {
+          @include imageCover(100%, 450px);
+        }
+      }
+    }
+  }
+
+  &__sidebar {
+    h3 {
+      margin-bottom: 2rem;
+    }
+    
+    &__list--item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 400px;
+      margin-bottom: 3rem;
+
+      img {
+        @include imageCover(30%, 80px);
+        border-radius: 1rem;
+      }
+
+      p {
+        margin-bottom: unset;
       }
     }
   }
