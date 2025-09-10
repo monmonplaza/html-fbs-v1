@@ -27,15 +27,11 @@
 
   &__wrapper {
     padding-top: 8rem;
-    display: grid;
-    gap: 5rem;
-    grid-template-columns: 2fr 1fr;
+    @include gridCustom(2fr 1fr, 5rem);
     @include mediaQuery($mobile) {
       @include grid(1, 2rem);
     }
   }
-
-
 
   &__medium__image {
     display: flex;
@@ -52,6 +48,7 @@
 
 .elist {
   padding-bottom: 8rem;
+
   &__wrapper {
     @include grid(3, 3rem);
     margin-top: 8rem;

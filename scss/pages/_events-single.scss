@@ -1,0 +1,51 @@
+@use "../abstract/" as *;
+@use "sass:color";
+
+.esingle {
+  padding: 8rem 0;
+
+  &__title {
+    max-width: 90rem;
+    @include mediaQuery($mobile) {
+      max-width: fit-content;
+    }
+    ul {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      li {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 4rem;
+    @include gridCustom(2fr 1fr, 5rem);
+    @include mediaQuery($mobile) {
+      @include grid(1, 2rem);
+    }
+  }
+  &__content {
+    img {
+      @include imageCover(100%, 450px);
+      padding-bottom: 4rem;
+    }
+    p {
+      padding-bottom: 1rem;
+    }
+    ul {
+      padding: 0 0 1rem 5rem;
+      list-style: disc;
+      li {
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
