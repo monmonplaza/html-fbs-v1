@@ -5,10 +5,7 @@
   padding: 8rem 0;
 
   &__title {
-    max-width: 90rem;
-    @include mediaQuery($tablet) {
-      max-width: 70rem;
-    }
+    max-width: 70%;
     @include mediaQuery($mobile) {
       max-width: fit-content;
     }
