@@ -1,0 +1,30 @@
+9-10-25
+
+new files:
+-events.html
+-events.scss
+-events-single.html
+-events-single.scss
+
+<------------------>
+
+
+9-11-25
+
+revision:
+grid-area
+
+-events.html
+-events.scss
+
+---------------------
+
+new files:
+-services-learning-solutions.html
+-services-learning-solutions.scss
+
+---------------------
+
+note: The school logos currently have a fixed size and border radius to achieve the layout. 
+      However, I noticed that some logos are not rounded.
+      Will edit the CSS once the actual images are inserted.

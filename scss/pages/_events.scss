@@ -1,0 +1,121 @@
+@use "../abstract/" as *;
+@use "sass:color";
+
+.events {
+  padding: 8rem 0;
+
+  &__block__header {
+    small {
+      font-size: clamp(1.1rem, 6vw, 1.4rem);
+      line-height: 1;
+      letter-spacing: 2px;
+      @include mediaQuery($tablet) {
+        line-height: 1.2;
+        letter-spacing: 1px;
+        display: block;
+      }
+    }
+
+    h2 {
+      line-height: 0.8;
+      margin-bottom: 1rem;
+      color: $accent;
+      @include mediaQuery($tablet) {
+        line-height: 1.2;
+      }
+    }
+  }
+
+  &__wrapper {
+    padding-top: 8rem;
+    display: grid;
+    grid-template-areas:
+      "a b"
+      "a c";
+    gap: 2rem;
+    @include mediaQuery($mobile) {
+      grid-template-areas:
+        "a"
+        "b"
+        "c";
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border-radius: 1rem;
+    position: relative;
+    img {
+      @include imageCover(100%, 540px);
+      @include mediaQuery($mobile) {
+        @include imageCover(100%, 250px);
+      }
+    }
+    h4 {
+      position: absolute;
+      bottom: 9rem;
+      max-width: 36rem;
+      left: 2rem;
+    }
+    span {
+      position: absolute;
+      z-index: 20;
+      display: block;
+      background-color: color.adjust($gray, $lightness: 100%);
+      color: $dark;
+      bottom: 4rem;
+      left: 0rem;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      font-size: 1.4rem;
+      border-top-right-radius: 2rem;
+      border-bottom-right-radius: 2rem;
+    }
+    &:hover {
+      span {
+        background-color: $accent;
+        color: $light;
+        transition: all 0.5s ease;
+      }
+    }
+  }
+
+  &__card--a {
+    grid-area: a;
+  }
+
+  &__card--b {
+    grid-area: b;
+    img {
+      @include imageCover(100%, 260px);
+    }
+  }
+
+  &__card--c {
+    grid-area: c;
+    img {
+      @include imageCover(100%, 260px);
+    }
+  }
+}
+
+.elist {
+  padding-bottom: 8rem;
+
+  h2 {
+    line-height: 0.8;
+    margin-bottom: 1rem;
+    color: $accent;
+    @include mediaQuery($tablet) {
+      line-height: 1.2;
+    }
+  }
+
+  &__wrapper {
+    @include grid(3, 3rem);
+    margin-top: 8rem;
+    @include mediaQuery($tablet) {
+      @include grid(1, 2rem);
+      margin-top: 4rem;
+    }
+  }
+}
