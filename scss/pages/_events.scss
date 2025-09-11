@@ -72,7 +72,7 @@
     }
   }
 
-  &__medium__image {
+  &__img--medium {
     display: flex;
     flex-direction: column;
     gap: 4rem;
@@ -96,7 +96,7 @@
       line-height: 1.2;
     }
   }
-  
+
   &__wrapper {
     @include grid(3, 3rem);
     margin-top: 8rem;
