@@ -1027,14 +1027,12 @@ input, textarea {
 .events__wrapper {
   padding-top: 8rem;
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 5rem;
+  grid-template-areas: "a b" "a c";
+  grid-gap: 2rem;
 }
 @media screen and (max-width: 45rem) {
   .events__wrapper {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
+    grid-template-areas: "a" "b" "c";
   }
 }
 .events__card {
@@ -1080,18 +1078,23 @@ input, textarea {
   color: #fff;
   transition: all 0.5s ease;
 }
-.events__img--medium {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+.events__card--a {
+  grid-area: a;
 }
-@media screen and (max-width: 45rem) {
-  .events__img--medium {
-    gap: 2rem;
-  }
+.events__card--b {
+  grid-area: b;
 }
-.events__img--medium img {
-  height: 250px;
+.events__card--b img {
+  height: 260px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.events__card--c {
+  grid-area: c;
+}
+.events__card--c img {
+  height: 260px;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;

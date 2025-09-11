@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .events__wrapper {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "large top"
+          "large bottom";
+        gap: 2rem;
+        padding: 2rem;
+      }
+
+      /* Assign grid areas */
+      .events__img--large {
+        grid-area: large;
+      }
+      .events__img--top {
+        grid-area: top;
+      }
+      .events__img--bottom {
+        grid-area: bottom;
+      }
+
+      /* Card styling */
+      .events__card {
+        display: block;
+        position: relative;
+        border-radius: 1rem;
+        overflow: hidden;
+        text-decoration: none;
+        color: white;
+      }
+
+      .events__card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* Overlay text */
+      .events__card h4 {
+        position: absolute;
+        bottom: 3rem;
+        left: 1rem;
+        right: 1rem;
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      .events__card .category {
+        position: absolute;
+        bottom: 0.8rem;
+        left: 1rem;
+        background: rgba(255, 255, 255, 0.8);
+        color: black;
+        padding: 0.3rem 1rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .events__wrapper {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "large"
+            "top"
+            "bottom";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="events__wrapper">
+      <div class="events__img--large">
+        <a href="./events-single.html" class="events__card">
+          <img src="https://placehold.co/600x400" alt="" />
+          <h4>
+            Seminar on Event Planning and Cybersecurity Hosted by Trust Bridge
+            Global
+          </h4>
+          <span class="category">Events</span>
+        </a>
+      </div>
+
+      <div class="events__img--top">
+        <a href="./events-single.html" class="events__card">
+          <img src="https://placehold.co/400x200" alt="" />
+          <h4>
+            Trust Bridge Global Holds Devotion at Frontline Business Solutions,
+            Inc.
+          </h4>
+          <span class="category">Events</span>
+        </a>
+      </div>
+
+      <div class="events__img--bottom">
+        <a href="./events-single.html" class="events__card">
+          <img src="https://placehold.co/400x200" alt="" />
+          <h4>August 2025 Fellowship: Secret Agent Mission</h4>
+          <span class="category">Events</span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
