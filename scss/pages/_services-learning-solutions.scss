@@ -3,29 +3,34 @@
 
 .lspartner {
   padding: 8rem 0;
+
   @include mediaQuery($mobile) {
     padding: 4rem 0;
   }
+
   &__logo {
-    max-width: 80rem;
     width: 100%;
-    margin: 0 auto;
+    max-width: 80rem;
+    margin: 8rem auto 0;
+
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
     justify-content: center;
-    margin-top: 8rem;
+    gap: 2rem;
   }
 }
 
 .ls__about {
   background-color: $gray;
   padding: 8rem 0;
+
   @include mediaQuery($mobile) {
     padding: 4rem 0;
   }
+
   &__wrapper {
     @include grid(2, 5rem);
+
     @include mediaQuery($mobile) {
       @include grid(1, 5rem);
       margin: 4rem 0;
@@ -38,23 +43,6 @@
     }
   }
 
-  &__button {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    margin-top: 4rem;
-    li {
-      &:last-child {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        img {
-          @include imageCover(2rem, 2rem);
-        }
-      }
-    }
-  }
-
   &__list {
     & > *:not(:last-child) {
       margin-bottom: 2rem;
@@ -64,13 +52,32 @@
   &__listitem {
     &--title {
       display: flex;
-      gap: 2rem;
       align-items: center;
+      gap: 2rem;
       margin-bottom: 1rem;
     }
 
     p {
       opacity: 0.7;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 4rem;
+
+    li {
+      &:last-child {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+          @include imageCover(2rem, 2rem);
+        }
+      }
     }
   }
 }
@@ -140,21 +147,28 @@
   min-height: 70rem;
   position: relative;
   margin-bottom: 8rem;
+
   @include mediaQuery($tablet) {
     margin-bottom: 18rem;
   }
+
   @include mediaQuery($mobile) {
     min-height: 30rem;
     margin-bottom: 4rem;
   }
+
   &__image {
+    position: relative;
+
     img {
       position: absolute;
       top: 0;
       right: 0;
+
       @include mediaQuery($tablet) {
         width: 100%;
       }
+
       @include mediaQuery($mobile) {
         width: 100%;
         position: static;
@@ -165,29 +179,35 @@
   &__content {
     position: absolute;
     top: 50%;
+    left: calc((100% - $container-width) / 2);
     transform: translateY(-50%);
-    max-width: 70rem;
-    height: 50rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    box-shadow: $card-shadow;
+
     width: 100%;
-    left: calc((100% - $container-width) / 2);
+    max-width: 70rem;
+    height: 50rem;
     padding: 3rem;
+
     background: rgba($light, 0.8);
     border-radius: 1rem;
+    box-shadow: $card-shadow;
+
     @include mediaQuery($tablet) {
-      background: rgba($light, 0.9);
       position: static;
       top: 100%;
       transform: translateY(100%);
       margin: 0 auto;
+
+      background: rgba($light, 0.9);
       max-height: fit-content;
     }
+
     @include mediaQuery($mobile) {
       transform: translateY(0);
     }
+
     small {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -222,6 +242,7 @@
       font-size: clamp(1.1rem, 6vw, 1.4rem);
       line-height: 1;
       letter-spacing: 2px;
+
       @include mediaQuery($tablet) {
         line-height: 1.2;
         letter-spacing: 1px;
@@ -233,6 +254,7 @@
       line-height: 0.8;
       margin-bottom: 1rem;
       color: $accent;
+
       @include mediaQuery($tablet) {
         line-height: 1.2;
       }
@@ -242,6 +264,7 @@
   &__wrapper {
     margin-top: 3rem;
     @include grid(2, 2.5rem);
+
     @include mediaQuery($mobile) {
       @include grid(1, 3rem);
     }
@@ -251,17 +274,20 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+
     @include mediaQuery($mobile) {
       flex-direction: column;
       justify-content: center;
       text-align: center;
     }
-    p {
-      margin-bottom: unset;
-    }
+
     img {
       @include imageCover(13rem, 13rem);
       border-radius: 100%;
+    }
+
+    p {
+      margin-bottom: unset;
     }
   }
 }
@@ -270,9 +296,10 @@
   padding: 8rem 0;
 
   h2 {
-    line-height: 0.8;
     margin-bottom: 1rem;
+    line-height: 0.8;
     color: $accent;
+
     @include mediaQuery($tablet) {
       line-height: 1.2;
     }
@@ -281,6 +308,7 @@
   &__wrapper {
     @include grid(3, 3rem);
     margin-top: 8rem;
+
     @include mediaQuery($tablet) {
       @include grid(1, 2rem);
       margin-top: 4rem;
@@ -288,11 +316,13 @@
   }
 
   &__card {
+    position: relative;
     overflow: hidden;
     border-radius: 1rem;
-    position: relative;
+
     img {
       @include imageCover(100%, 540px);
+
       @include mediaQuery($mobile) {
         @include imageCover(100%, 250px);
       }
@@ -300,30 +330,32 @@
 
     &--text {
       position: absolute;
+      left: 2rem;
       bottom: 9rem;
       max-width: 36rem;
-      left: 2rem;
     }
 
     span {
       position: absolute;
-      z-index: 20;
-      display: block;
-      background-color: color.adjust($gray, $lightness: 100%);
-      color: $dark;
+      left: 0;
       bottom: 5rem;
-      left: 0rem;
-      padding: 0.5rem 2rem 0.5rem 2rem;
+      z-index: 20;
+
+      display: block;
+      padding: 0.5rem 2rem;
+
       font-size: 1.4rem;
+      color: $dark;
+      background-color: color.adjust($gray, $lightness: 100%);
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
+      transition: all 0.5s ease;
     }
 
     &:hover {
       span {
-        background-color: $accent;
         color: $light;
-        transition: all 0.5s ease;
+        background-color: $accent;
       }
     }
   }
@@ -336,9 +368,11 @@
     margin-top: 5rem;
     @include grid(3, 3rem);
     justify-items: center;
+
     @include mediaQuery($tablet) {
       @include grid(2, 2.5rem);
     }
+
     @include mediaQuery($mobile) {
       @include grid(1, 2.5rem);
     }
@@ -347,7 +381,6 @@
   &__card {
     background-color: $gray;
     border-radius: 1rem;
-
     height: 60rem;
     position: relative;
 
@@ -359,18 +392,21 @@
 
     &--message {
       padding: 2rem;
+
       p {
         font-style: italic;
         line-height: 1.8;
         position: relative;
         max-width: 600px;
         padding: 0 2rem;
+
         &::before {
           content: url("https://placehold.co/25x25");
           position: absolute;
           top: 2px;
           left: -7px;
         }
+
         &::after {
           content: url("https://placehold.co/25x25");
           position: absolute;
@@ -378,6 +414,7 @@
         }
       }
     }
+
     &--trainee {
       padding: 2rem;
       display: flex;
@@ -385,13 +422,93 @@
       gap: 1rem;
       position: absolute;
       bottom: 0;
+
       img {
         @include imageCover(8rem, 8rem);
         border-radius: 100%;
       }
+
       p {
         margin-bottom: unset;
       }
+    }
+  }
+}
+
+.ls__testimonial {
+  padding: 8rem 0;
+
+  &__wrapper {
+    margin-top: 10rem;
+    display: grid;
+    justify-items: center;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    background-color: $gray;
+    border-radius: 2rem;
+    padding: 10rem 0 0 10rem;
+    max-width: 90%;
+
+    @include gridCustom(2fr 1fr, 10rem);
+
+    @include mediaQuery($tablet) {
+      padding: 7rem;
+      @include grid(1, 5rem);
+    }
+
+    &--text {
+      position: relative;
+
+      > img {
+        position: absolute;
+        top: -2.5rem;
+        left: -3rem;
+        z-index: -1;
+
+        @include imageCover(6rem, 6rem);
+      }
+    }
+  }
+
+  &__partner {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 10rem;
+
+    p {
+      margin-bottom: unset;
+    }
+
+    img {
+      @include imageCover(13rem, 8rem);
+    }
+
+    @include mediaQuery($mobile) {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @include mediaQuery($tablet) {
+      position: static;
+      margin-top: 5rem;
+    }
+  }
+
+  &__image {
+    @include imageCover(40%, 40rem);
+
+    img {
+      border-bottom-right-radius: 2rem;
+    }
+
+    @include mediaQuery($tablet) {
+      display: none;
     }
   }
 }
