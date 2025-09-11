@@ -28,9 +28,16 @@
 
   &__wrapper {
     padding-top: 8rem;
-    @include gridCustom(2fr 1fr, 5rem);
+    display: grid;
+    grid-template-areas:
+      "a b"
+      "a c";
+    gap: 2rem;
     @include mediaQuery($mobile) {
-      @include grid(1, 2rem);
+      grid-template-areas:
+        "a"
+        "b"
+        "c";
     }
   }
 
@@ -72,15 +79,21 @@
     }
   }
 
-  &__img--medium {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    @include mediaQuery($mobile) {
-      gap: 2rem;
-    }
+  &__card--a {
+    grid-area: a;
+  }
+
+  &__card--b {
+    grid-area: b;
     img {
-      @include imageCover(100%, 250px);
+      @include imageCover(100%, 260px);
+    }
+  }
+
+  &__card--c {
+    grid-area: c;
+    img {
+      @include imageCover(100%, 260px);
     }
   }
 }
