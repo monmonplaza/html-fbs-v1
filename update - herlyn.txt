@@ -22,3 +22,9 @@ grid-area
 new files:
 -services-learning-solutions.html
 -services-learning-solutions.scss
+
+---------------------
+
+note: The school logos currently have a fixed size and border radius to achieve the layout. 
+      However, I noticed that some logos are not rounded.
+      Will edit the CSS once the actual images are inserted.
