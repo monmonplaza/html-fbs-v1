@@ -267,7 +267,7 @@
 }
 
 .ls__batch {
-  padding-bottom: 8rem;
+  padding: 8rem 0;
 
   h2 {
     line-height: 0.8;
@@ -324,6 +324,73 @@
         background-color: $accent;
         color: $light;
         transition: all 0.5s ease;
+      }
+    }
+  }
+}
+
+.ls__exp {
+  padding: 8rem 0;
+
+  &__wrapper {
+    margin-top: 5rem;
+    @include grid(3, 3rem);
+    justify-items: center;
+    @include mediaQuery($tablet) {
+      @include grid(2, 2.5rem);
+    }
+    @include mediaQuery($mobile) {
+      @include grid(1, 2.5rem);
+    }
+  }
+
+  &__card {
+    background-color: $gray;
+    border-radius: 1rem;
+
+    height: 60rem;
+    position: relative;
+
+    iframe {
+      width: 100%;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+
+    &--message {
+      padding: 2rem;
+      p {
+        font-style: italic;
+        line-height: 1.8;
+        position: relative;
+        max-width: 600px;
+        padding: 0 2rem;
+        &::before {
+          content: url("https://placehold.co/25x25");
+          position: absolute;
+          top: 2px;
+          left: -7px;
+        }
+        &::after {
+          content: url("https://placehold.co/25x25");
+          position: absolute;
+          bottom: -10px;
+        }
+      }
+    }
+    &--trainee {
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      position: absolute;
+      bottom: 0;
+      img {
+        @include imageCover(8rem, 8rem);
+        border-radius: 100%;
+      }
+      p {
+        margin-bottom: unset;
       }
     }
   }
