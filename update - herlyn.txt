@@ -13,10 +13,11 @@ new files:
 
 revision:
 grid-area
+
 -events.html
 -events.scss
 
-----------
+---------------------
 
 new files:
 -services-learning-solutions.html
