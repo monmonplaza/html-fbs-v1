@@ -1,0 +1,46 @@
+@use '../abstract/' as *;
+@use 'sass:color';
+
+.service__about {
+    padding: 8rem 0;
+    @include mediaQuery($mobile) {
+        padding: 4rem 0;
+     }
+    &__wrapper {
+        margin: 8rem 0;
+        @include grid(2, 5rem);
+         @include mediaQuery($mobile) {
+            @include grid(1, 5rem);
+             margin: 4rem 0;
+         }
+    }
+
+    &__image{ 
+        img {
+            @include imageCover(100%, 43rem);
+            margin-bottom: 4rem;
+        }
+    }
+
+    &__list {
+        & > *:not(:last-child) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__listitem {
+        .flex {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            opacity: 0.7;
+        }
+    }
+}
+
+
+

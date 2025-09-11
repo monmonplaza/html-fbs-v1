@@ -1,0 +1,25 @@
+@use '../abstract/' as *;
+@use 'sass:color';
+
+.service__benefits {
+    margin-bottom: 8rem;
+    @include mediaQuery($mobile) {
+    margin-bottom: 4rem;
+     }
+    &__wrapper {
+        margin-top: 8rem;
+        @include grid(2, 5rem);
+        @include mediaQuery($mobile) {
+            @include grid(1, 5rem);
+        }
+    }
+
+    &__image {
+        img {
+             @include mediaQuery($mobile) {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

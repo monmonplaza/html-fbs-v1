@@ -1,0 +1,141 @@
+@use '../abstract/' as *;
+@use 'sass:color';
+
+.service__plan {
+    padding: 8rem 0;
+    background: $gray;
+     @include mediaQuery($mobile) {
+        padding: 4rem 0;
+     }
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        gap: 5rem;
+        margin-top: 8rem;
+         @include mediaQuery($mobile) {
+            flex-direction: column;
+         }
+    }
+
+    &__card {
+        padding: 2rem;
+        border: 1px solid $line;
+        max-width: 35rem;
+        width: 100%;
+        border-radius: 2rem;
+        background: #fafafa;
+        transition: .5s ease;
+        box-shadow: -3px 3px 5px rgba($dark, 0.03);
+        &:hover {
+            border-color: $accent;
+             a.action {
+                color: $light;
+                background: $accent;
+                border: 1px solid $accent;
+             }
+        }
+        .title {
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            span {
+                display: block;
+                font-size: 1.4rem;
+                font-family: 'poppins-regular'!important;
+                font-weight: 400;
+            }
+            font-size: clamp(2rem, 6vw, 4rem);
+        }
+
+        p.description {
+            opacity: 0.8;
+            font-size: 1.4rem;
+        }
+
+        a.action {
+            padding: 1rem 1rem;
+            background: transparent;
+            display: block;
+            text-align: center;
+            border-radius: 3rem;
+            border: 1px solid $dark;
+                  transition: .5s ease;
+            &:hover {
+                color: $light;
+                background:color.adjust($accent,$blackness: 20%);
+                border: 1px solid color.adjust($accent,$blackness: 20%);;
+            }
+        }
+
+        ul.list {
+            margin-top: 2rem;
+            li {
+                display: flex;
+                gap: 1rem;
+                padding: .5rem 0;
+                margin-bottom: .3rem;
+                font-size: 1.4rem;
+            }
+            li:last-child {
+                margin-bottom: 0;
+            }
+
+        }
+    }
+
+
+    &__card.default {
+        &:hover {
+            outline: 1px solid $light;
+            outline-offset: -5px;
+        }
+        color: $light;
+        border-color: $accent;
+        background: $accent;
+        a.action {
+            background: $light;
+            color: $accent;
+            border-color: $accent;
+            transition: .5s ease;
+            &:hover {
+                outline: 1px solid color.adjust($accent,$blackness: 20%);
+                outline-offset: 3px;
+                 background: color.adjust($accent,$blackness: 20%)  ;
+
+                color:$light
+                
+            }
+        }
+
+        h3.title{
+            color:$light
+        }
+    }
+}
+
+
+
+
+.service__plan__wrapper.overflow {
+    max-width: 120rem;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4rem;
+    margin: 5rem auto;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 280px;
+    gap: 2rem;
+    justify-content: flex-start;
+  
+}
+
+.service__plan__card {
+   
+    width: 280px ;
+}
