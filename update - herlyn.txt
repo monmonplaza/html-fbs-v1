@@ -16,6 +16,10 @@ grid-area
 -events.html
 -events.scss
 
+suggestion only:
+-service-banner.scss - The content is not properly aligned, 
+                       that’s why I set it to left 5% on tablet size.
+
 ----------
 
 new files:
