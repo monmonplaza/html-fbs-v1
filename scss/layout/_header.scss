@@ -12,9 +12,14 @@
     @include mediaQuery($tablet) {
       gap:2rem;
     }
+
+    @include mediaQuery($mobile) {
+      display: none;
+    }
+
     a {
-       display: flex;
-    gap: .5rem; 
+      display: flex;
+      gap: .5rem; 
     }
    }
 }

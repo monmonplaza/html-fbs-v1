@@ -1,6 +1,7 @@
 @use '../abstract/' as *;
 
 .modal {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -20,11 +21,184 @@
         transform: translate(-50%, -50%);
         background: $light;
         width: 100%;
-        max-width: 80rem;
+        max-width: 110rem;
         display: grid;
         grid-template-columns: 1fr 300px;
         height: fit-content;
         margin: 1rem .75rem;
+        border-radius: 1rem;
+        overflow: clip;
+        scrollbar-gutter: stable;
+        @include mediaQuery($tablet)  {
+            grid-template-columns: 1fr;
+             max-width: 54rem;
+        }
+
+          @include mediaQuery($mobile)  {
+            max-width: 34rem;
+            overflow: auto;
+            max-height: 60rem
+          }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-between;
+        padding: 4rem;
+        margin: 0 2rem;
+   
+        padding-right: 2rem;
+        @include mediaQuery($tablet)  {
+            padding: 2rem;
+            margin: 0;
+        }
+
+        p {
+            margin-bottom: 0;
+        }
+
+        .header-block {
+            margin-bottom: 3rem;
+            h3 {
+                line-height: 1.2;
+            }
+        }
+
+
+        ul {
+            margin-bottom: 3rem;
+            max-width: 33rem;
+            width:100%;
+            li {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            font-size: 1.4rem;
+            }
+
+            li:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+        p {
+               margin-top: 5rem;
+               margin-bottom: 1rem;
+               font-size: 1.4rem;
+        }
+
+        ul.socmed {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            li {
+                margin-bottom: 0;
+            }
+        }
+
+        .download {
+            small {
+                display: block;
+            }
+
+            a {
+                color: $accent;
+                font-weight: 600;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .modal__form {
+            position: absolute;
+            top: 5rem;
+            right: 17rem;
+            background:$light;
+            padding: 4rem 2rem 2rem;
+            max-width: 40rem;
+            width: 100%;
+            box-shadow: -2px 2px 2px rgba(0,0,0,0.02);
+            border: 1px solid $line;
+            border-radius: 1.5rem;
+            @include mediaQuery($tablet) {
+                right: 12rem;
+                 box-shadow: none;
+                 border: none;
+                 padding: 0;
+            }
+
+            @include mediaQuery($tablet) {
+                position: static;
+                margin-top: 5rem;
+                margin-inline: auto;
+            }
+            .form__input {
+                margin-bottom: 1.5rem;
+                position: relative;
+                &:focus-within span {
+                        color:$dark;
+                    }
+                label span {
+                    position: absolute;
+                    font-size: 1.2rem;
+                    display: block;
+                    padding: .5rem;
+                    top: -1.3rem;
+                    left: .75rem;
+                    background: $light;
+                    color: rgb(126, 126, 126);
+                }
+
+                input, textarea {
+                    width: 100%;
+                    padding: 1.6rem 1.2rem 1rem;
+                    border: 1px solid $line;
+                    border-radius: .7rem;
+                    &:focus {
+                        outline: none;
+                        border: 1px solid $accent;
+                    }
+
+                }
+
+                textarea {
+                    height: 100%;
+                    overflow-y: auto;
+                    resize: none;
+                    height: 17rem;
+                }
+
+                
+            }
+
+            input[type="submit"] {
+                    background-color: $accent;
+                             padding:  1.2rem 1.6rem;
+                             border: 1px solid $accent;
+                             border-radius: 3rem;
+                             color: $light;
+                }
+
+        }
+        
+    }
+     &__image img {
+        @include mediaQuery($tablet) {
+             display: none;
+        }
+     }
+
+    &__image button{
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: $light;
+        padding: .7rem;
+        border-radius: 50%;
+        border: none;
     }
 
 }
