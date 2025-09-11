@@ -24,9 +24,6 @@
     top: 50%;
     left: calc((100% - $container-width) / 2);
     transform: translateY(-50%);
-    @include mediaQuery($tablet) {
-      left: 5%;
-    }
     @include mediaQuery($mobile) {
       padding: 1rem;
       position: static;

@@ -305,11 +305,6 @@ input, textarea {
   left: calc((100% - 144rem) / 2);
   transform: translateY(-50%);
 }
-@media screen and (max-width: 80rem) {
-  .page__banner .banner__content {
-    left: 5%;
-  }
-}
 @media screen and (max-width: 45rem) {
   .page__banner .banner__content {
     padding: 1rem;
