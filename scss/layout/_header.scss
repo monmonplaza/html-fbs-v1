@@ -2,6 +2,7 @@
 
 .header {
    padding: 2rem 0; 
+   position: relative;
    &__wrapper {
     @include flexBetween;
    }
@@ -23,4 +24,139 @@
     }
    }
 }
+.megamenux.open {
+  max-height: 50vw;
+}
+.megamenux {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 50;
+  background: $light;
+  width: 100%;
+  border-top: 1px solid $line;
+  padding: 0 2rem;
+  height: auto;
+  max-height: 0vw;
+  overflow: hidden;
+  transition: .5s ease;
+  &__wrapper {
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1.1fr;
+    
+  }
 
+
+ .services {
+   &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5rem 0;
+   }
+
+   &__block {
+    margin-bottom:2rem ;
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+      color: $accent;
+    }
+
+    li {
+      font-size: 1.4rem;
+      margin-bottom: .3rem;
+      a {
+        &:hover {
+          text-decoration: underline;
+          color: $accent;
+        }
+      }
+    }
+   }
+ }
+
+ .promo {
+  margin-bottom: 2rem;
+  &__wrapper {
+    border-top: 1px solid $line;
+    padding-top:2rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: $container-width;
+    width: 100%;
+    margin: 0 auto;
+  
+   }
+   &__box {
+    padding: 1rem;
+    border-radius: 1rem;
+    &:hover {
+      background: $accent;
+      color: $line;
+    }
+    h5 {
+      font-size: 1.4rem;
+      font-family: "opensans-regular", sans-serif;
+      font-weight: 400;
+    }
+
+    p {
+      font-weight: 600;
+      margin-bottom: 0;
+    }
+   }
+ }
+
+
+ .blog {
+      margin: 5rem 0;
+       padding-left: 3rem;
+      border-left: 1px solid $line;
+      h5 {
+        margin-bottom: 2rem;
+        font-size: 2rem;
+      }
+  &__grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+   
+    align-items: flex-start;
+  }
+
+  &__card {
+    border: 1px solid $line;
+    border-radius: 1rem;
+    overflow: hidden;
+    div {
+      padding:1rem ;
+    }
+    img {
+      @include imageCover(100%, 200px)
+    }
+
+
+   
+    small {
+      margin-bottom: .2rem;
+      display: block;
+    }
+    a {
+      font-size: 1.6rem;
+      font-weight: bold;
+      &:hover {
+        color: $accent;
+      }
+    }
+
+  }
+ } 
+
+
+}

@@ -16,7 +16,7 @@
           <nav class="header__nav">
             <ul>
               <li><a href="#">Home</a></li>
-              <li>
+              <li class="has__megamenu">
                 <a href="#"
                   >Services <img src="https://placehold.co/20x20" alt=""
                 /></a>
@@ -29,6 +29,122 @@
               <li><a href="#">Payment</a></li>
             </ul>
           </nav>
+
+          <div class="megamenux">
+            <div class="megamenux__wrapper">
+              <div class="services__grid">
+                <div class="services__list">
+                  <div class="services_column">
+                    <div class="services__block webapp">
+                      <h4>Web Application</h4>
+                      <ul>
+                        <li><a href="#">HR Information System</a></li>
+                        <li><a href="#">Online Payroll System</a></li>
+                        <li><a href="#">School Enrollment System</a></li>
+                        <li><a href="#">Online Payment Integration</a></li>
+                        <li><a href="#">Online Donation System</a></li>
+                        <li><a href="#">Asset Inventory System</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="services__block webdev">
+                      <h4>Web Design And Development</h4>
+                      <ul>
+                        <li><a href="#">WordPress CMS Website</a></li>
+                        <li><a href="#">Single Page Website</a></li>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Graphic Design</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="services_column">
+                    <div class="services__block lcs">
+                      <h4>Learning Solutions</h4>
+                      <ul>
+                        <li><a href="#">College On-The-Job Training</a></li>
+                        <li><a href="#">High School Work Immersion</a></li>
+                        <li><a href="#">Continuing Studies</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="services__block acct">
+                      <h4>Accounting Solutions</h4>
+                      <ul>
+                        <li><a href="#">Business Registration</a></li>
+                        <li><a href="#">Bookkeeping / Compliance</a></li>
+                      </ul>
+                    </div>
+                    <div class="services__block vas">
+                      <h4>Virtual Assistance Solutions</h4>
+                      <ul>
+                        <li><a href="#">Administrative</a></li>
+                        <li><a href="#">Business Support</a></li>
+                        <li><a href="#">Marketing</a></li>
+                        <li><a href="#">Social Media Management</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="blog">
+                <h5>Events & Activites</h5>
+                <div class="blog__grid">
+                  <div class="blog__card">
+                    <img src="https://placehold.co/240x200" alt="" />
+                    <div>
+                      <small>Aug 15, 2025</small>
+
+                      <a href="#">
+                        Seminar on Event Planning and Cybersecurity Hosted by
+                        Trust Bridge Global</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="blog__card">
+                    <img src="https://placehold.co/240x200" alt="" />
+                    <div>
+                      <small>Aug 15, 2025</small>
+
+                      <a href="#">
+                        Trust Bridge Global Holds Devotion at Frontline Business
+                        Solutions, Inc.
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="promo">
+              <div class="promo__wrapper">
+                <a href="#" class="promo__box">
+                  <h5>Business Registration</h5>
+                  <p>Startup Package</p>
+                </a>
+
+                <a href="#" class="promo__box">
+                  <h5>Human Resource Information System</h5>
+                  <p>₱40 / Employee / Mo.</p>
+                </a>
+
+                <a href="#" class="promo__box">
+                  <h5>Online Payroll System</h5>
+                  <p>₱40 / Employee / Mo.</p>
+                </a>
+
+                <a href="#" class="promo__box">
+                  <h5>One-Page Website</h5>
+                  <p>Startup Package</p>
+                </a>
+
+                <a href="#" class="promo__box">
+                  <h5>Virtual Assistant Service</h5>
+                  <p>$8 / 40 Hours / Week</p>
+                </a>
+              </div>
+            </div>
+          </div>
 
           <button class="btn btn--accent">Get Started</button>
         </div>
@@ -475,5 +591,13 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const hasMegamenu = document.querySelector(".has__megamenu");
+      const megamenux = document.querySelector(".megamenux");
+      hasMegamenu.addEventListener("click", () => {
+        megamenux.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
