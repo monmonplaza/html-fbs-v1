@@ -528,10 +528,6 @@
       margin-bottom: unset;
     }
 
-    img {
-      @include imageCover(13rem, 8rem);
-    }
-
     @include mediaQuery($mobile) {
       flex-direction: column;
       justify-content: center;
