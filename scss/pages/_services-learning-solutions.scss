@@ -54,11 +54,21 @@
       display: flex;
       align-items: center;
       gap: 2rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      max-height: 2rem;
+      h3 {
+        color: $accent;
+      }
+
+      svg {
+        width: 4rem;
+        height: 4rem;
+      }
     }
 
     p {
       opacity: 0.7;
+      margin-bottom: 4rem;
     }
   }
 
@@ -69,13 +79,14 @@
     margin-top: 4rem;
 
     li {
-      &:last-child {
+      &:last-child > a {
         display: flex;
         align-items: center;
         gap: 1rem;
 
-        img {
-          @include imageCover(2rem, 2rem);
+        svg {
+          width: 2rem;
+          height: 2rem;
         }
       }
     }
@@ -132,8 +143,9 @@
       gap: 2rem;
       margin-bottom: 1rem;
 
-      img {
-        @include imageCover(2rem, 2rem);
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
       }
 
       p {
@@ -228,6 +240,11 @@
     &--item {
       @extend .ls__learn__list--item;
       margin-bottom: 0.5rem;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
     }
   }
 }
@@ -285,6 +302,9 @@
 
     img {
       @include imageCover(13rem, 13rem);
+      @include mediaQuery($mobile) {
+        @include imageCover(10rem, 10rem);
+      }
       border-radius: 100%;
     }
 
@@ -323,10 +343,30 @@
     border-radius: 1rem;
 
     img {
-      @include imageCover(100%, 540px);
-
+      @include imageCover(100%, 390px);
       @include mediaQuery($mobile) {
-        @include imageCover(100%, 250px);
+        @include imageCover(100%, 400px);
+      }
+    }
+
+    &--img {
+      picture {
+        position: relative;
+        filter: grayscale(100%);
+        transition: 0.5s ease;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-image: linear-gradient(to top, $dark, transparent);
+          pointer-events: none;
+        }
+
+        &:hover {
+          filter: grayscale(0%);
+          transition: 0.5s ease;
+        }
       }
     }
 
@@ -335,6 +375,7 @@
       left: 2rem;
       bottom: 9rem;
       max-width: 36rem;
+      color: $light;
     }
 
     span {
@@ -342,22 +383,21 @@
       left: 0;
       bottom: 5rem;
       z-index: 20;
-
+      transition: 0.5s ease;
       display: block;
       padding: 0.5rem 2rem;
-
       font-size: 1.4rem;
       color: $dark;
       background-color: color.adjust($gray, $lightness: 100%);
       border-top-right-radius: 2rem;
       border-bottom-right-radius: 2rem;
-      transition: all 0.5s ease;
     }
 
     &:hover {
       span {
         color: $light;
         background-color: $accent;
+        transition: 0.5s ease;
       }
     }
   }
@@ -386,8 +426,9 @@
     height: 60rem;
     position: relative;
 
-    iframe {
+    lite-youtube {
       width: 100%;
+      height: 220px;
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
     }
@@ -398,21 +439,17 @@
       p {
         font-style: italic;
         line-height: 1.8;
-        position: relative;
         max-width: 600px;
         padding: 0 2rem;
+        position: relative;
+      }
 
-        &::before {
-          content: url("https://placehold.co/25x25");
-          position: absolute;
-          top: 2px;
-          left: -7px;
-        }
-
-        &::after {
-          content: url("https://placehold.co/25x25");
-          position: absolute;
-          bottom: -10px;
+      span {
+        font-size: 3rem;
+        position: absolute;
+        &:first-child {
+          left: -0.2rem;
+          top: -1rem;
         }
       }
     }
@@ -427,7 +464,6 @@
 
       img {
         @include imageCover(8rem, 8rem);
-        border-radius: 100%;
       }
 
       p {
@@ -469,13 +505,14 @@
         line-height: 1.8;
       }
 
-      > img {
+      > svg {
         position: absolute;
-        top: -2.5rem;
-        left: -3rem;
+        top: -6rem;
+        left: -4rem;
         z-index: -1;
-
-        @include imageCover(6rem, 6rem);
+        fill: $light !important;
+        width: 13rem;
+        height: 13rem;
       }
     }
   }
