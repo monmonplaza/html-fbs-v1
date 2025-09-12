@@ -45,6 +45,24 @@
     overflow: hidden;
     border-radius: 1rem;
     position: relative;
+    picture {
+      position: relative;
+      filter: grayscale(100%);
+      transition: 0.5s ease;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: linear-gradient(to top, $dark, transparent);
+        pointer-events: none;
+      }
+
+      &:hover {
+        filter: grayscale(0%);
+        transition: 0.5s ease;
+      }
+    }
     img {
       @include imageCover(100%, 540px);
       @include mediaQuery($mobile) {
@@ -56,6 +74,7 @@
       bottom: 9rem;
       max-width: 36rem;
       left: 2rem;
+      color: $light;
     }
     span {
       position: absolute;
